@@ -13,6 +13,8 @@
     <h2>Don't Leave Your Friends Behind</h2>
     <h1>Invite 	Friends to Secure Your Early Access</h1>
     <p>Invite your friends and earn prizes. Share your unique link via email, Facebook or Twitter and earn GiftFactor Points for every friend who Signs Up.</p>
+
+    <h2>Friends referred: <%= @user.referrals.count %></h2>
     <div class="social-sharing-buttons">
       <div class="fb-share-button"
         data-href="<%= referral_url %>"
@@ -33,7 +35,13 @@
         </a>
       </div>
     </div>
-    <p><input type="text" class="url" value="<%= referral_url %>"></p>
+    <p>
+      <input type="text"
+      class="url"
+      value="<%= referral_url %>"
+      onclick="this.focus();this.select()"
+      readonly="readonly" />
+    </p>
   </div>
   <div class="clear"></div>
 
