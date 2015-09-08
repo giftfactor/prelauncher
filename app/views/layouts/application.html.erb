@@ -5,8 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,700" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gift Giving Made Easy">
+  <meta property="og:image" content="<%= image_url 'fb_logo.jpg' %>"/>
+  <title>Gift Factor</title>
 </head>
-<body>
+<body id="<%= content_for :body_id %>">
 
 <%= yield %>
 

@@ -14,5 +14,129 @@
  *= require_self
  */
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+ body {
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+ 	font-family: 'Source Sans Pro', sans-serif;
+ 	line-height: 1.5;
+ 	font-weight: 400;
+ 	font-size: 16px;
+ 	overflow-x: hidden;
+ 	margin:0px;
+ 	padding: 0px;
+ }
+
+ body#landing {
+ 	background-image: image-url("background.jpg");
+ }
+
+
+ header,
+ section.main,
+ footer {
+ 	width: 80%;
+ 	margin: 80px auto 20px auto;
+ }
+
+ section.main {
+ 	width: 80%;
+ 	margin: auto;
+ }
+
+ section.main h1 {
+ 	font-size: 3.9em;
+     padding: 0px;
+     margin: 0px;
+     text-transform: uppercase;
+     font-weight: 400;
+     color: #4E4E4E;
+ }
+
+ #thankyou h1 {
+ 	font-size: 2.6em;
+ }
+
+
+
+ section.main h2 {
+ 	text-transform: uppercase;
+ 	font-size: 2em;
+ 	color: #4E4E4E;
+ }
+
+ #thankyou h2 {
+ 	font-size: 1.8em;
+ }
+
+ section.main p {
+ 	font-size: 1.3em;
+ 	max-width: 750px;
+ }
+
+ a {
+ 	color: #F86013;
+ 	text-decoration: underline;
+ }
+
+ a:hover {
+ 	text-decoration: none;
+ }
+
+ footer a {
+ 	display: inline-block;
+ 	margin-right: 10px;
+ 	opacity: 0.7;
+ }
+
+ #thankyou header {
+ 	margin: auto;
+ 	padding: 10px;
+ }
+
+ #thankyou header span.notice {
+ 	background: #F86013;
+     border-radius: 2px;
+     display: block;
+     text-align: center;
+     text-transform: uppercase;
+     padding: 5px;
+     font-size: 1.5em;
+     color: #fff;
+     margin-top: 10px;
+ }
+
+ #thankyou .one {
+ 	float: left;
+ 	width: 450px;
+ 	text-align: center;
+ 	padding-top: 40px;
+ }
+
+ #thankyou .two {
+ 	float: right;
+ 	width: 550px;
+ 	text-align: center;
+ }
+
+ #thankyou .url {
+ 	  font-size: 1em;
+     padding: 5px 10px;
+     border-radius: 0px;
+ 		width: 15em;
+ }
+
+
+ .clear {
+ 	clear: both;
+ }
+
+ .wrapper {
+ 	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+ 	-o-background-size: cover;
+ 	background-size: cover;
+ 	background-image: url(../img/background2.1.1.jpg);
+ 	height: 600px;
+ }
