@@ -127,6 +127,9 @@
  		width: 15em;
  }
 
+body#thankyou {
+  background-image: image-url("background-thankyou.jpg");  
+}
 
  .clear {
  	clear: both;
@@ -137,6 +140,5 @@
  	-moz-background-size: cover;
  	-o-background-size: cover;
  	background-size: cover;
- 	background-image: url(../img/background2.1.1.jpg);
  	height: 600px;
  }
