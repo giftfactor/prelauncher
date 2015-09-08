@@ -30,6 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rainbows'
 gem 'eventmachine'
 gem 'figaro'
+gem 'naught'
 
 gem 'rack-tracker'
 gem 'omniauth-facebook'

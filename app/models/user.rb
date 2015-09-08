@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :identities
+
   validates_format_of :email, with: /.+@.+\..+/i
   validates_uniqueness_of :email
   validates_uniqueness_of :referral_code
@@ -16,5 +18,8 @@ class User < ActiveRecord::Base
 
   def generate_referral_code
     self.referral_code = SecureRandom.hex(5)
+  end
+
+  def subscribe_to_mailing_list
   end
 end

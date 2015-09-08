@@ -12,6 +12,8 @@
   <meta name="description" content="Gift Giving Made Easy">
   <meta property="og:image" content="<%= image_url 'fb_logo.jpg' %>"/>
   <title>Gift Factor</title>
+
+  <%= tag :meta, :name => "facebook-key", :content => ENV['FACEBOOK_KEY'] %>
 </head>
 <body id="<%= content_for :body_id %>">
 
