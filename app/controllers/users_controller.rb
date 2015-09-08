@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def new
     redirect_if_already_registered
-    @user = User.new
 
     ref_code = params[:ref_code]
     cookies.permanent.signed["ref_code"] = ref_code
@@ -11,6 +10,7 @@ class UsersController < ApplicationController
     @user = find_or_create_from_oauth
     referring_user.add_referral(@user.email)
     cookies.permanent.signed["user_id"] = @user.id
+    SubscriptionsWorker.new.async.perform(@user.id)
     redirect_to referrals_path
   end
 
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
     else
       user = User.create(
         email: auth['info']['email'],
-        first_name: auth['info']['first_name'] || 'empty',
-        last_name: auth['info']['last_name'] || 'empty',
+        first_name: auth['info']['first_name'] || '',
+        last_name: auth['info']['last_name'] || '',
       )
       user.identities.create_from_oauth(auth)
     end

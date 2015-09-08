@@ -20,6 +20,4 @@ class User < ActiveRecord::Base
     self.referral_code = SecureRandom.hex(5)
   end
 
-  def subscribe_to_mailing_list
-  end
 end
