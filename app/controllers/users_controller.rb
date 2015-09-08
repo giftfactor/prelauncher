@@ -28,7 +28,7 @@ class UsersController < ApplicationController
     if !@user.nil?
       @referral_code = @user.referral_code
     else
-      # redirect_to root_path
+      redirect_to root_path
     end
   end
 
