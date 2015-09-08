@@ -9,14 +9,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Gift Giving Made Easy">
-  <meta property="og:image" content="<%= image_url 'fb_logo.jpg' %>"/>
   <title>Gift Factor</title>
 
-  <%= tag :meta, :name => "facebook-key", :content => ENV['FACEBOOK_KEY'] %>
+  <%= tag :meta, name: "facebook-key", content: ENV['FACEBOOK_KEY'] %>
+  <%= tag :meta, name: "og:type", content: "website" %>
+  <%= tag :meta, name: "og:title", content: "Gift Factor" %>
+  <%= tag :meta, name: "og:description", content: "Gift Giving Made Easy" %>
+  <%= tag :meta, name: "og:image", content: image_url('fb_logo.jpg') %>
+
 </head>
+
 <body id="<%= content_for :body_id %>">
 
 <%= yield %>
 
 </body>
+
 </html>

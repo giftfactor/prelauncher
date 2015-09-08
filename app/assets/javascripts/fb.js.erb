@@ -5,7 +5,9 @@ window.fbAsyncInit = function() {
     cookie : true, // enable cookies to allow the server to access the session
     xfbml  : true  // parse XFBML
   });
+  $(document).trigger('fb_sdk_loaded');
 };
+
 (function(d) {
   var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
   js = d.createElement('script'); js.id = id; js.async = true;

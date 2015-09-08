@@ -114,31 +114,43 @@
  	padding-top: 40px;
  }
 
- #thankyou .two {
- 	float: right;
- 	width: 550px;
- 	text-align: center;
- }
+#thankyou .two {
+  float: right;
+  width: 500px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 0 1.5em;
+  margin-top: 3em;
+}
 
- #thankyou .url {
- 	  font-size: 1em;
-     padding: 5px 10px;
-     border-radius: 0px;
- 		width: 15em;
- }
+#thankyou .url {
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 0px;
+  width: 22em;
+  text-align: center;
+}
 
 body#thankyou {
-  background-image: image-url("background-thankyou.jpg");  
+  background-image: image-url("background-thankyou.jpg");
 }
 
  .clear {
  	clear: both;
  }
 
- .wrapper {
- 	-webkit-background-size: cover;
- 	-moz-background-size: cover;
- 	-o-background-size: cover;
- 	background-size: cover;
- 	height: 600px;
- }
+.wrapper {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 600px;
+}
+
+.social-sharing-buttons {
+  .fb-share-button,
+  .twitter-share-button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

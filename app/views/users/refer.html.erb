@@ -13,8 +13,27 @@
     <h2>Don't Leave Your Friends Behind</h2>
     <h1>Invite 	Friends to Secure Your Early Access</h1>
     <p>Invite your friends and earn prizes. Share your unique link via email, Facebook or Twitter and earn GiftFactor Points for every friend who Signs Up.</p>
-    <p><input type="text" class="url" value="<%= @user.referral_code %>"></p>
+    <div class="social-sharing-buttons">
+      <div class="fb-share-button"
+        data-href="<%= referral_url %>"
+        data-layout="button_count">
+        Share on Facebook
+      </div>
 
+      <div class="twitter-share-button">
+        <a href="https://twitter.com/share"
+          class="twitter-share-button"
+          data-url="<%= referral_url %>"
+          data-text="Check out this site"
+          data-via="giftfactor"
+          data-size=""
+          data-hashtags="giftfactor"
+          data-dnt="true">
+          Share on Twitter
+        </a>
+      </div>
+    </div>
+    <p><input type="text" class="url" value="<%= referral_url %>"></p>
   </div>
   <div class="clear"></div>
 
