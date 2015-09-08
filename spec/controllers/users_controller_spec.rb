@@ -43,6 +43,27 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe "POST create" do
+    let(:payload_email) { test_email }
+    let(:payload) do
+      {
+        'provider' => 'test_provider',
+        'info' => {
+          'email' => payload_email,
+          'first_name' => 'first',
+          'last_name' => 'last'
+        },
+        'credentials' => {
+          'token' => 'test_token',
+          'expires_at' => Time.now.to_i
+        },
+        'uid' => 'test_uid'
+      }
+    end
+
+    before :each do
+      request.env["omniauth.auth"] = payload
+    end
+
     context "cookie properties" do
       let(:biscuits) { double(cookies) }
 
@@ -55,12 +76,12 @@ RSpec.describe UsersController, type: :controller do
       end
 
       it "saves the user_id in a signed cookie" do
-        post :create, {user: {email: test_email}}
+        post :create
         expect(biscuits).to have_received(:signed).at_least(:once)
       end
 
       it "saves the user_id in a permanent cookie" do
-        post :create, {user: {email: test_email}}
+        post :create
         expect(biscuits).to have_received(:permanent).at_least(:once)
       end
 
@@ -68,7 +89,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "next steps" do
       before do
-        post :create, {user: {email: test_email}}
+        post :create
       end
 
       it "redirects to referral page" do
@@ -82,7 +103,7 @@ RSpec.describe UsersController, type: :controller do
 
     context "new user" do
       before do
-        post :create, {user: {email: test_email}}
+        post :create
       end
 
       it "creates a new account" do
@@ -96,9 +117,11 @@ RSpec.describe UsersController, type: :controller do
 
     context 'referred user' do
       let(:referred_email) { 'referred@example.com' }
+      let(:payload_email) { referred_email }
+
       before do
         cookies.signed["ref_code"] = user.referral_code
-        post :create, {user: {email: referred_email}}
+        post :create
       end
 
       it "adds the referred user to the referring user's list of referrals" do
