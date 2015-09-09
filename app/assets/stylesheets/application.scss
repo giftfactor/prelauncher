@@ -151,6 +151,9 @@ body#thankyou {
   .fb-share-button,
   .twitter-share-button {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
+    .count-o {
+      display: none;
+    }
   }
 }
