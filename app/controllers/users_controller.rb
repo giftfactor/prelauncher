@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def new
     redirect_if_already_registered
 
-    ref_code = params[:ref_code]
+    ref_code = params[:ref_code] || params[:fb_ref]
     cookies.permanent.signed["ref_code"] = ref_code
   end
 
