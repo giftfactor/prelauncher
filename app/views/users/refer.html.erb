@@ -17,9 +17,8 @@
     <h2>Friends referred: <%= @user.referrals.count %></h2>
     <div class="social-sharing-buttons">
       <div class="fb-share-button"
-        data-href="<%= root_url %>"
-        data-ref="<%= @user.referral_code %>"
-        data-layout="button_count">
+        data-href="<%= referral_url %>"
+        data-layout="button">
         Share on Facebook
       </div>
 
