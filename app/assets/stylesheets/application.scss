@@ -76,10 +76,10 @@ section.main h2 {
  	font-size: 1.8em;
  }
 
- section.main p {
- 	font-size: 1.3em;
- 	max-width: 750px;
- }
+section.main p {
+	font-size: 1.3em;
+	max-width: 750px;
+}
 
  a {
  	color: #F86013;
@@ -158,5 +158,8 @@ body#thankyou {
   .twitter-share-button {
     display: inline-block;
     vertical-align: bottom;
+  }
+  span {
+    font-size: 1.3em;
   }
 }
