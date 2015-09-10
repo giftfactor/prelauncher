@@ -14,26 +14,26 @@
  *= require_self
  */
 
- body {
- 	-webkit-background-size: cover;
- 	-moz-background-size: cover;
- 	-o-background-size: cover;
- 	background-size: cover;
- 	font-family: 'Source Sans Pro', sans-serif;
- 	line-height: 1.5;
- 	font-weight: 400;
- 	font-size: 16px;
- 	overflow-x: hidden;
- 	margin:0px;
- 	padding: 0px;
- }
+body {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+	font-size: 16px;
+	overflow-x: hidden;
+	margin:0px;
+	padding: 0px;
+  background-position: bottom;
+  overflow: hidden;
+  height: 100vh;
+}
 
 body#landing {
 	background-image: image-url("background.jpg");
-  height: 100vh;
   /* min-height: 100%; */
-  background-position: bottom;
-  overflow: hidden;
 }
 
 
@@ -115,7 +115,7 @@ section.main p {
 
  #thankyou .one {
  	float: left;
- 	width: 450px;
+ 	width: 600px;
  	text-align: center;
  	padding-top: 40px;
  }
