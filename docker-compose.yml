@@ -2,7 +2,7 @@ db:
   image: postgres
 web:
   build: .
-  command: bundle exec guard -i -n
+  command: bundle exec guard
   volumes:
     - .:/myapp
   ports:

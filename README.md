@@ -20,7 +20,7 @@ Prepare the database using
 * `docker-compose run web rake db:create db:schema:load` for the dev db
 * `docker-compose run -e RAILS_ENV=test web rake db:create db:schema:load` for the test db
 
-You can then run `docker-compose up`
+You can then run `docker-compose build` to build the image and `docker-compose run --service-ports web` to run the application (this is to enable the interactive debugging from guard-pry)
 
 ## Guard
 
