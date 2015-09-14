@@ -1,15 +1,16 @@
 FROM ruby:2.1.6
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 
-# see http://ilikestuffblog.com/2014/01/06/how-to-skip-bundle-install-when-deploying-a-rails-app-to-docker/
-# Copy the Gemfile and Gemfile.lock into the image.
-# Temporarily set the working directory to where they are.
-WORKDIR /tmp
+ENV APP_HOME /myapp
+RUN mkdir $APP_HOME
+WORKDIR $APP_HOME
 
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
+ADD Gemfile $APP_HOME/
+ADD Gemfile.lock $APP_HOME/
+
+ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile
+ENV BUNDLE_JOBS=2
+ENV BUNDLE_PATH=/bundle
 RUN bundle install
 
-RUN mkdir /myapp
-WORKDIR /myapp
-ADD . /myapp
+ADD . $APP_HOME

@@ -11,16 +11,20 @@ See:
 * https://docs.docker.com/installation/ubuntulinux/
 * https://docs.docker.com/compose/install/
 
-Follow instructions on how to add yourself to the `docker` user group `usermod -a -G docker ${USER}`
+Follow instructions on how to add yourself to the docker user group by running `sudo usermod -a -G docker ${USER}`
 
-You might need to logout and log back in; alternatively you can run `exec su -l $USER` or `newgrp docker`
+You might need to logout and log back in; alternatively you can run `exec su -l $USER` or `sudo newgrp docker`
+
+You can then run `docker-compose build` to build the image.
 
 Prepare the database using
 
 * `docker-compose run web rake db:create db:schema:load` for the dev db
 * `docker-compose run -e RAILS_ENV=test web rake db:create db:schema:load` for the test db
 
-You can then run `docker-compose build` to build the image and `docker-compose run --service-ports web` to run the application (this is to enable the interactive debugging from guard-pry)
+Use `docker-compose run --service-ports web` to run the application (this is to enable the interactive debugging from guard-pry)
+
+To update the project's bundle, you can run `docker-compose run web bundle`
 
 ## Guard
 

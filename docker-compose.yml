@@ -9,3 +9,9 @@ web:
     - "3000:3000"
   links:
     - db
+  volumes_from:
+    - bundle
+bundle:
+  image: prelauncher_web
+  volumes:
+    - /bundle

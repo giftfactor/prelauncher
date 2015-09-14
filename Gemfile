@@ -38,6 +38,7 @@ gem 'rack-tracker'
 gem 'omniauth-facebook'
 gem 'gibbon'
 gem 'sucker_punch', '~> 1.0'
+gem 'koala'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
