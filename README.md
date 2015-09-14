@@ -1,6 +1,32 @@
+## Initial Setup
+
+Take a look at `config/application.yml.example` to see which kinds of API keys you'd need to have. Then, duplicate it into the file `config/application.yml` so the app will be able to use its settings.
+
+## Docker and Docker Compose
+
+This project uses Docker and Docker Compose to isolate the development dependencies and generally make the application self-contained and easy to start hacking on.
+
+See:
+
+* https://docs.docker.com/installation/ubuntulinux/
+* https://docs.docker.com/compose/install/
+
+Follow instructions on how to add yourself to the `docker` user group `usermod -a -G docker ${USER}`
+
+You might need to logout and log back in; alternatively you can run `exec su -l $USER` or `newgrp docker`
+
+Prepare the database using
+
+* `docker-compose run web rake db:create db:schema:load` for the dev db
+* `docker-compose run -e RAILS_ENV=test web rake db:create db:schema:load` for the test db
+
+You can then run `docker-compose up`
+
 ## Guard
 
-This project uses guard, guard-rspec and guard-rails. In your terminal:
+This project uses guard, guard-rspec and guard-rails to make TDD easier. If you're not running Docker Compose, you can manually start the guard watcher.
+
+In your terminal:
 
     $ guard
 

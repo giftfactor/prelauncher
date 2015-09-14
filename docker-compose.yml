@@ -1,0 +1,11 @@
+db:
+  image: postgres
+web:
+  build: .
+  command: bundle exec guard -i -n
+  volumes:
+    - .:/myapp
+  ports:
+    - "3000:3000"
+  links:
+    - db
