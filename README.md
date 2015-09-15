@@ -24,7 +24,9 @@ Prepare the database using
 
 Use `docker-compose run --service-ports web` to run the application (this is to enable the interactive debugging from guard-pry)
 
-To update the project's bundle, you can run `docker-compose run web bundle`
+To update the project's bundle, you can run `docker-compose run web bundle` to be able to use the bundle cache.
+
+Running `docker-compose build` will bust the cache and rebundle all gems. This might take a very long time but can be useful when the bundle cache is corrupted.
 
 ## Guard
 

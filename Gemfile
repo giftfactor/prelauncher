@@ -38,7 +38,7 @@ gem 'rack-tracker'
 gem 'omniauth-facebook'
 gem 'gibbon'
 gem 'sucker_punch', '~> 1.0'
-gem 'koala'
+gem 'koala', "~> 2.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,6 +60,7 @@ group :development do
   gem 'spring'
   gem 'capistrano-devops', '0.0.15'
   gem 'capistrano-rails'
+  gem 'thin'
 end
 
 gem 'rails_12factor'
