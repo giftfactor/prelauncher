@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def refer
     @user = User.where(id: cookies.signed["user_id"]).first
+    @share_message = 'Damn-smart algorithms for gift suggestions must be fun! Check here if you love gifts which are more then “just ok”: giftfactor.co'
     if !@user.nil?
       @referral_code = @user.referral_code
     else
@@ -24,7 +25,8 @@ class UsersController < ApplicationController
   end
 
   def failure
-    redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
+    redirect_to root_url,
+      :alert => "Authentication error: #{params[:message].humanize}"
   end
 
   private

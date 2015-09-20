@@ -12,7 +12,11 @@
   <div class="two">
     <h2>Don't Leave Your Friends Behind</h2>
     <h1>Invite Friends to Secure Your Early Access</h1>
-    <p>Invite your friends and earn prizes. Share your unique link via email, Facebook or Twitter and earn a GiftFactor Point for every friend who Signs Up.</p>
+    <p>
+        Invite your friends and earn prizes.
+        Share your unique link via email, Facebook or Twitter
+        and earn a GiftFactor Point for every friend who Signs Up.
+    </p>
 
     <h2>Gift Factor Points: <%= @user.referrals.count %></h2>
 
@@ -28,7 +32,7 @@
         <a href="https://twitter.com/share"
           class="twitter-share-button"
           data-url="<%= referral_url %>"
-          data-text="Check out this site"
+          data-text="<%= @share_message %>"
           data-via="giftfactor"
           data-size=""
           data-hashtags="giftfactor"
