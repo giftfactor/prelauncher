@@ -39,6 +39,7 @@ gem 'omniauth-facebook'
 gem 'gibbon'
 gem 'sucker_punch', '~> 1.0'
 gem 'koala', "~> 2.2"
+gem 'bitly'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

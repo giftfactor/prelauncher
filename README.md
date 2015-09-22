@@ -11,6 +11,20 @@ See:
 * https://docs.docker.com/installation/ubuntulinux/
 * https://docs.docker.com/compose/install/
 
+`wget -qO- https://get.docker.com/ | sh` to install the latest version of docker
+
+```
+sudo su
+curl -L https://github.com/docker/compose/releases/download/1.4.1/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+```
+ to install docker-compose version 1.4.1
+
+```
+sudo su
+chmod +x /usr/local/bin/docker-compose
+```
+to make it executable.
+
 Follow instructions on how to add yourself to the docker user group by running `sudo usermod -a -G docker ${USER}`
 
 You might need to logout and log back in; alternatively you can run `exec su -l $USER` or `sudo newgrp docker`
