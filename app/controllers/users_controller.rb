@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def refer
     @user = User.where(id: cookies.signed["user_id"]).first
-    @share_message = 'Damn-smart algorithms for gift suggestions must be fun! Check here if you love gifts which are more then “just ok”'
+    @share_message = 'Looks Like I’ll Always Be Giving Great Gifts From Now On! Check it Out: Data-Based Gift Suggestions:'
     if !@user.nil?
       @referral_code = @user.referral_code
     else

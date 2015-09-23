@@ -31,7 +31,7 @@
       <div class="twitter-share-button">
         <a href="https://twitter.com/share"
           class="twitter-share-button"
-          data-url="<%= referral_url %>"
+          data-url="<%= Bitly.client.shorten(referral_url).short_url %>"
           data-text="<%= @share_message %>"
           data-via="giftfactor"
           data-size=""
